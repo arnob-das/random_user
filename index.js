@@ -12,6 +12,7 @@ app.use(express.json())
 const ramdomUserRoute = require("./routes/v1/ramdomUser.route");
 const allRamdomUserRoute = require("./routes/v1/allRandomUser.route");
 const saveRandomUserRoute = require("./routes/v1/saveRandomUser.route");
+const updateSpecificUserRoute = require("./routes/v1/updateSpecificUser.route")
 
 // send data for a random user
 app.use("/api/v1/user/random", ramdomUserRoute);
@@ -21,6 +22,9 @@ app.use("/api/v1/user/all", allRamdomUserRoute);
 
 // save data for an random user
 app.use("/api/v1/user/save", saveRandomUserRoute);
+
+// update specific user
+app.use("/api/v1/user/update", updateSpecificUserRoute);
 
 
 app.get("/", (req, res) => {
