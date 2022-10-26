@@ -14,6 +14,7 @@ const allRamdomUserRoute = require("./routes/v1/allRandomUser.route");
 const saveRandomUserRoute = require("./routes/v1/saveRandomUser.route");
 const updateSpecificUserRoute = require("./routes/v1/updateSpecificUser.route");
 const deleteSpecificUserRoute = require("./routes/v1/deleteSpecificUser.route");
+const bulkUpdateMultipleUser = require("./routes/v1/bulkUpdateMultipleUser.route");
 
 // send data for a random user
 app.use("/api/v1/user/random", ramdomUserRoute);
@@ -29,6 +30,9 @@ app.use("/api/v1/user/update", updateSpecificUserRoute);
 
 // delete specific user through id
 app.use("/api/v1/user/delete", deleteSpecificUserRoute);
+
+// bulk update multiple user's data through their id
+app.use("/api/v1/user/bulk-update", bulkUpdateMultipleUser);
 
 
 app.get("/", (req, res) => {

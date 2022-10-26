@@ -3,7 +3,6 @@ let data = require('../data.json')
 
 module.exports.deleteSpecificUser = (req, res, next) => {
 
-    const dbLength = data.length;
     const { _id } = req.params;
 
     let idPresent = data.find(data => Number(data.id) === Number(_id));
